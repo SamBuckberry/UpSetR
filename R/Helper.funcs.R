@@ -63,9 +63,17 @@ Wanted <- function(data, unwanted_sets){
   temp_data <- (data[ ,!(colnames(data) %in% unwanted_sets), drop = F])
 }
 
+# ## original ordering function based on set size
+# order_sets <- function(data, sets){
+#   sets <- colSums(data[sets])
+#   sets <- names(sets[order(sets, decreasing = T)])
+#   return(sets)
+# }
+
+# Do not reorder sets
 order_sets <- function(data, sets){
-  sets <- colSums(data[sets])
-  sets <- names(sets[order(sets, decreasing = T)])
+  #sets <- colSums(data[sets])
+  #sets <- names(sets[order(sets, decreasing = T)])
   return(sets)
 }
 
